@@ -28,7 +28,6 @@ namespace Parcial.Models
         public string Email { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd//MM/yyyy}", ApplyFormatInEditMode = true)]
         public int Brithdate { get; set; }
-
-
+        public string Name { get; set; }
     }
 }

@@ -17,12 +17,14 @@ namespace Parcial.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/Quispes
+        [Authorize]
         public IQueryable<Quispe> GetQuispes()
         {
             return db.Quispes;
         }
 
         // GET: api/Quispes/5
+        [Authorize]
         [ResponseType(typeof(Quispe))]
         public IHttpActionResult GetQuispe(int id)
         {
@@ -35,7 +37,13 @@ namespace Parcial.Controllers
             return Ok(quispe);
         }
 
+        public object PostQuispes(object quispe)
+        {
+            throw new NotImplementedException();
+        }
+
         // PUT: api/Quispes/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutQuispe(int id, Quispe quispe)
         {
@@ -71,6 +79,7 @@ namespace Parcial.Controllers
         }
 
         // POST: api/Quispes
+        [Authorize]
         [ResponseType(typeof(Quispe))]
         public IHttpActionResult PostQuispe(Quispe quispe)
         {
@@ -86,6 +95,7 @@ namespace Parcial.Controllers
         }
 
         // DELETE: api/Quispes/5
+        [Authorize]
         [ResponseType(typeof(Quispe))]
         public IHttpActionResult DeleteQuispe(int id)
         {
